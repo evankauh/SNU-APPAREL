@@ -1,44 +1,52 @@
 import PropTypes from 'prop-types';
+import React from 'react';
+import { NavLink } from 'react-router-dom'; 
 
-
-const CustomLink = ({ href, className, children }) => {
-    const linkstyles = "text-[15px] font-medium text-black cursor-pointer lsit-none";
+const CustomNavLink = ({ href, className, children }) => {
+    const linkStyles = "text-[15px] font-medium text-black cursor-pointer list-none";
 
     return (
-        <a
-            href=""
-            className={([ isActive ]) =>
+        <NavLink
+            to={href}
+            className={({ isActive }) =>
                 isActive
-                    ? `${className} ${linkStlyes} text-primary-green`
-                    : `${className} ${linkStlyes}`
+                    ? `${className} ${linkStyles} text-gold`
+                    : `${className} ${linkStyles}`
             }
         >
             {children}
-        </a>
+        </NavLink>
     );
 };
 
-const Badges = ({ color, children }) => {
+const CustomLink = ({ className, children }) => {
+    const linkStyles = "text-[15px] font-medium cursor-pointer list-none";
+    return (<NavLink className={`${className} ${linkStyles}`}> {children}</NavLink>);
+};
 
+const Badges = ({ color, children }) => {
     return (
-       <div
-        className={`w-[18px] h-[18px] ${color} rounded-full text-[12px] flex justify-center text-white`}
-       >
+       <div className={`w-[14px] h-[14px] ${color} rounded-full text-[8px] flex justify-center items-center text-white`}>
         {children}
        </div>
     );
 };
 
+export { CustomNavLink, CustomLink, Badges };
 
-export { CustomLink, Badges };
+CustomNavLink.propTypes = {
+    href: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};
 
-CustomLink.PropTypes = {
-    href: PropTypes.isRequired,
-    className: PropTypes.isRequired,
-    children: PropTypes.isRequired,
-}
+CustomLink.propTypes = {
+    href: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};
 
-Badges.PropTypes = {
-    color: PropTypes.isRequired,
-    children: PropTypes.isRequired,
-}
+Badges.propTypes = {
+    color: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};

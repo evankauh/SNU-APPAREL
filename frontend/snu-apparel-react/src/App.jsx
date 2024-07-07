@@ -1,11 +1,7 @@
 import './App.css'
 
 import { Header } from './components/common/Header'
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Layout } from './router';
 
 function App() {
