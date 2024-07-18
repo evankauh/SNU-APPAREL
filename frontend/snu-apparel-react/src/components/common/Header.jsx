@@ -57,7 +57,7 @@ export const Header = () => {
                         {/* CART / SEARCH / LOGIN ICONS */}
                         <div className="absolute right-0 flex items-center gap-8 icons">
                             <div className="hidden lg:block text-inherit relative z-20">
-                                <CustomLink>Login</CustomLink>
+                                <CustomLink>Login </CustomLink>
                                 <span>/</span>
                                 <CustomLink>Sign Up</CustomLink>
                             </div>
@@ -85,7 +85,7 @@ export const Header = () => {
                     
                 </nav>
                 {/* Responsive menu for screen sizes smaller than 768px */}
-                <div ref={menuRef} className={`lg:hidden absolute top-0 right-0 custom-p-0 bg-black w-full px-0 py-0 menu-container ${mobileNav ? "block" : "hidden"}`}>
+                <div ref={menuRef} className={`lg:hidden absolute top-0 right-0 bg-black w-full px-0 py-0 menu-container ${mobileNav ? "block" : "hidden"}`}>
                     <div className="flex justify-end pr-4">
                         <button onClick={toggleNav} className="lg:hidden m-2 w-10 h-10 flex justify-center items-center focus:outline-none">
                             {<AiOutlineClose size={24}/>}
@@ -100,8 +100,8 @@ export const Header = () => {
                     </ul>
 
                     <div className="flex gap-3 p-5 text-inherit z-20">
-                        <button className="w-20 h-8 border-solid border-2 border-black rounded-[20px]"><CustomLink>Login</CustomLink></button>
-                        <button className="text-light-gray w-20 h-8 border-solid border-2 border-black bg-black rounded-[20px]"><CustomLink>Sign Up</CustomLink></button>
+                        <button className="w-20 h-8 border-solid border border-black rounded-[20px]"><CustomLink>Login</CustomLink></button>
+                        <button className="text-light-gray w-20 h-8 border-solid border border-black bg-black rounded-[20px]"><CustomLink>Sign Up</CustomLink></button>
                     </div>
                 </div>
             </header>
