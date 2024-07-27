@@ -1,5 +1,10 @@
+import { Hero } from "../../components/hero/Hero.jsx"
+
 export const Home = () => {
     return (
-        <div>Home</div>
+        <>
+            <Hero/>
+            {/* <Product/> */}
+        </>
     )
 }

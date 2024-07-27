@@ -20,4 +20,4 @@ export const menulists = [
       link: "Socials",
     },
   ];
-  
+

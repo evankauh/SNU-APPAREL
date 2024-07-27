@@ -1,8 +1,7 @@
-import './App.css'
-
+import "./styles/index.css"
 import { Header } from './components/common/Header'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Layout } from './router';
+import { Home, Layout, Shop } from './router';
 
 function App() {
 
@@ -15,6 +14,14 @@ function App() {
         element={
           <Layout>
             <Home/>
+          </Layout>
+        }
+      />
+      <Route
+        path="/shop"
+        element={
+          <Layout>
+            <Shop/>
           </Layout>
         }
       />
