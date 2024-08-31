@@ -16,6 +16,10 @@ const Title = ({ level, children, className }) => {
         ? "text-[24px] font-[600] text-primary"
         : level === 5
         ? "text-[22px] font-[600] text-primary"
+        : level === 6
+        ? "text-[22px] font-[600] text-white"
+        : level === 7
+        ? "text-[17px] font-[400] text-primary"
         : "text-[18px] font-[500] text-primary"
     }`;
     return <Heading className={`${className} ${classes}`}>{children}</Heading>;
@@ -37,6 +41,10 @@ const Caption = ({ children }) => {
     return <p className="text-sm font-normal text-primary-gray">{children}</p>;
 };
 
+const FooterCaption = ({ children }) => {
+    return <p className="text-sm font-normal text-white">{children}</p>
+}
+
 const Span = ({ children }) => {
     return <span className="text-xs font-semibold text-white">{children}</span>;
 };
@@ -49,8 +57,25 @@ const CustomNavLink = ({ href, className, children }) => {
             to={href}
             className={({ isActive }) =>
                 isActive
-                    ? `${className} {linkStyles} text-gold`
+                    ? `${className} ${linkStyles} text-gold`
                     : `${className} ${linkStyles}`
+            }
+        >
+            {children}
+        </NavLink>
+    );
+};
+
+const CustomMobileNavLink = ({ href, className, children }) => {
+    const linkStyles = "text-[20px] font-medium cursor-pointer list-none";
+
+    return (
+        <NavLink
+            to={href}
+            className={({ isActive }) =>
+                isActive
+                    ? `${className} ${linkStyles} text-gold`
+                    : `${className} ${linkStyles} text-white`
             }
         >
             {children}
@@ -60,7 +85,7 @@ const CustomNavLink = ({ href, className, children }) => {
 
 const CustomLink = ({ className, children }) => {
     const linkStyles = "text-[15px] font-medium cursor-pointer list-none";
-    return (<NavLink className={`{className} ${linkStyles}`}> {children}</NavLink>);
+    return (<NavLink className={`${className} ${linkStyles}`}> {children}</NavLink>);
 };
 
 const Badges = ({ color, children }) => {
@@ -71,13 +96,19 @@ const Badges = ({ color, children }) => {
     );
 };
 
-export { Title, BodyOne, BodyTwo, Caption, Span, CustomNavLink, CustomLink, Badges };
+export { Title, BodyOne, BodyTwo, Caption, Span, CustomNavLink, CustomLink, Badges, FooterCaption, CustomMobileNavLink };
 
 CustomNavLink.propTypes = {
     href: PropTypes.string.isRequired,
     className: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 };
+
+CustomMobileNavLink.propTypes = {
+    href: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired, 
+}
 
 CustomLink.propTypes = {
     href: PropTypes.string.isRequired,
@@ -109,6 +140,10 @@ BodyTwo.propTypes = {
 Caption.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+FooterCaption.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
 
 Span.propTypes = {
   children: PropTypes.node.isRequired,

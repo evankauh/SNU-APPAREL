@@ -1,7 +1,7 @@
 import "./styles/index.css"
 import { Header } from './components/common/Header'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Layout, Shop } from './router';
+import { Home, Layout, ProductDeatils, Shop } from './router';
 
 function App() {
 
@@ -22,6 +22,14 @@ function App() {
         element={
           <Layout>
             <Shop/>
+          </Layout>
+        }
+      />
+      <Route
+        path="/product-details/:productId"
+        element={
+          <Layout>
+            <ProductDeatils/>
           </Layout>
         }
       />

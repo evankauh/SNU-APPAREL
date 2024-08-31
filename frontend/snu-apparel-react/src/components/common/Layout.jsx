@@ -1,5 +1,6 @@
 import Proptypes from "prop-types";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 
 export const Layout = ({children}) => {
@@ -7,6 +8,7 @@ export const Layout = ({children}) => {
         <>
             <Header/>
             <main style={{minHeight: "80vh"}}>{children}</main>
+            <Footer/>
         </>
     )
 };

@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import { BodyOne, Title } from "../common/CustomComponents";
 import { FaFacebookF, FaRegStar, FaStar, FaStarHalfAlt, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { CartActions } from "../../redux/slice/cartSlice";
 
 export const RenderRatingStars = (rating) => {
     const totalStars = 5;
@@ -26,11 +28,16 @@ export const RenderRatingStars = (rating) => {
 
 export const ProductCard = ({id, key, title, description, images, price, discount, rating, featured, category, color}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const dispatch = useDispatch();
     const openModal = () => {
         setIsModalOpen(true);
     }
     const closeModal = () => {
         setIsModalOpen(false);
+    }
+    const discountPrice = price[0].value - (price[0].value - discount) / 100;
+    const addToCart = () => {
+        dispatch(CartActions.addToCart({id, title, price: discountPrice}));
     }
     return (
         <>
@@ -51,7 +58,7 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
                     <button onClick={openModal} className="quick-view-btn product-btn primary-btn">
                         Quick View
                     </button>
-                    <button className="add-to-cart-btn product-btn primary-btn">
+                    <button onClick={addToCart} className="add-to-cart-btn product-btn primary-btn">
                         <IoCart size={23}/>
                     </button>
                     <button className="love-btn product-btn primary-btn">
@@ -63,7 +70,7 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
                 <NavLink to={`/product-details/${id}`}>
                     <BodyOne>{title}</BodyOne>
                 </NavLink>
-                <div className="flex items-center gap-2 -mt-2 mb-2">{RenderRatingStars(rating)}</div>
+                <div className="flex items-center gap-2 mb-2">{RenderRatingStars(rating)}</div>
                 <div className="flex items-center gap-3">
                     {price.slice(0, 1).map((priceItem, index) => (
                         <>
@@ -111,7 +118,7 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
                             <BodyOne className="text-sm leading-6">{description}</BodyOne>
                             <div className="flex items-center gap-3">
                                 <input type="text" value="1" className="w-12 h-12 text-primary outline-none border-2 border-primary px-4"/>
-                                <button className="primary-btn">ADD TO CART</button>
+                                <button onClick={addToCart} className="primary-btn">ADD TO CART</button>
                             </div>
                             <hr className="my-5"/>
                             <div className="flex flex-col gap-4">
