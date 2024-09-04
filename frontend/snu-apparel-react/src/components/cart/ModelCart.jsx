@@ -2,14 +2,17 @@ import { IoMdHeart } from "react-icons/io";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { Badges, BodyOne, Title } from "../common/CustomComponents"
 import { useState } from "react";
-import { selectTotalPrice, selectTotalQuantity } from "../../redux/slice/cartSlice";
+import { CartActions, clearCart, selectTotalPrice, selectTotalQuantity } from "../../redux/slice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCloseOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
+import { CheckoutForm } from "../cart/CheckoutForm";
 
 export const ModelCart = () => {
     const totalQuantity = useSelector(selectTotalQuantity);
     const cartItems = useSelector((state) => state.cart.itemList);
     const totalPrice = useSelector(selectTotalPrice);
+    
     const [isOpen, setIsOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [activeTab, setActiveTab] = useState("cart");
@@ -33,6 +36,13 @@ export const ModelCart = () => {
         setActiveTab(tab);
     }
 
+    const handlePaymentSuccess = () => {
+        console.log("==================");
+        console.log("Payment Success");
+        console.log("==================");
+        clearCart();
+    }
+
     return (
     <>
         <button className="relative z-20" onClick={openModal}>
@@ -51,7 +61,7 @@ export const ModelCart = () => {
         {isOpen && (
             <>
                 <div className="cartoverlay" onClick={closeModal}></div>
-                <div className={`cartmodel p-10 text-primary ${isClosing ? "closing" : ""}`}>
+                <div className={`cartmodel p-10 text-primary overflow-y-auto ${isClosing ? "closing" : ""}`}>
                     <div className="flex justify-between gap-5">
                         <button
                             className={`flex items-center gap-2 text-sm font-small ${
@@ -87,24 +97,29 @@ export const ModelCart = () => {
 
                     {activeTab == "cart" ? (
                         <>
-                        {cartItems.map((item) => (
-                            <CartProduct
-                                key = {item.id}
-                                id = {item.id}
-                                cover = {item.cover}
-                                price = {item.price}
-                                name = {item.name}
-                                quantity = {item.quantity}
-                            />
-                        ))}
+                        <div className="overflow-y-auto">
+                            {cartItems.map((item) => (
+                                <CartProduct
+                                    key = {item.id}
+                                    id = {item.id}
+                                    cover = {item.cover}
+                                    price = {item.price}
+                                    name = {item.name}
+                                    quantity = {item.quantity}
+                                />
+                            ))}
+                        </div>
 
                         <div className="total flex items-center justify-between mt-10">
                             <Title level={7}>Subtotal: </Title>
                             <Title level={7}>${totalPrice.toFixed(2)}</Title>
                         </div>
                         <div className="checkout">
-                            <button className="primary-btn w-full">View Cart</button>
+                            <CheckoutForm total={totalPrice} handlePaymentSuccess={handlePaymentSuccess}/>
                         </div>
+                        <NavLink to="/cart" onClick={closeModal}>
+                            <button className="primary-btn w-full">View Cart</button>
+                        </NavLink>
                         </>
                     ) : (
                         <>Show Product</>
@@ -120,7 +135,7 @@ export const CartProduct = ({ id, cover, name, price, quantity }) => {
     const dispatch = useDispatch();
   
     const removeCartItems = () => {
-      // to do
+      dispatch(CartActions.removeFromAllCart(id));
     };
   
     return (

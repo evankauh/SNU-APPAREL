@@ -1,5 +1,7 @@
 import React from "react";
 import { herolist } from "../../assets/linkData/heroData"
+import { productlists } from "../../assets/linkData/productData";
+import { ProductCard } from "../product/ProductCard";
 import {BodyOne, Caption, Title} from "../common/CustomComponents.jsx"
 import { useState } from "react";
 import "../../styles/index.css"
@@ -11,9 +13,9 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 function SampleNextArrow(props) {
     const { onClick } = props;
     return (
-      <div className="absolute bottom-0 left-96 lg:left-1/2 slider-btn" onClick={onClick}>
+      <div className="absolute top-3 right-96 lg:right-[5%] slider-btn rounded-full bg-gray-600" onClick={onClick}>
         <button className="next">
-            <MdKeyboardArrowRight size={50}/>
+            <MdKeyboardArrowRight size={30}/>
         </button>
       </div>
     );
@@ -22,9 +24,9 @@ function SampleNextArrow(props) {
   function SamplePrevArrow(props) {
     const { onClick } = props;
     return (
-        <div className="absolute bottom-0 bg-white text-primary left-96 lg:left-[45.5%] slider-btn z-10" onClick={onClick}>
+        <div className="absolute top-3 right-96 lg:right-[10%] slider-btn z-10 rounded-full bg-gray-600" onClick={onClick}>
         <button className="next">
-            <MdKeyboardArrowLeft size={50}/>
+            <MdKeyboardArrowLeft size={30}/>
         </button>
       </div>
     );
@@ -33,8 +35,8 @@ function SampleNextArrow(props) {
 export const Hero = () => {
     const settings = {
         dots: false,
-        infinite: true,
-        slidesToShow: 1,
+        infinite: false,
+        slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
@@ -42,8 +44,9 @@ export const Hero = () => {
     return (
         <>
             {/* used to be z-20 */}
-            <section className="h-[50vh] lg:h-[95vh] bg-white-100 lg:mt-14 relative z-1"> 
-                <Slider {...settings}>
+            <section className="h-[50vh] lg:h-[95vh] bg-primary lg:mt-14 relative z-1 featureproduct"> 
+            {/* HEROITEM AND HEROLISTS NOT BEING USED... */}
+                {/* <Slider {...settings}>
                     {herolist.map((item) => (
                         <HeroItem 
                             key={item.id}
@@ -52,6 +55,23 @@ export const Hero = () => {
                             prices={item.price}
                             colors={item.color}
                             image={item.image}
+                        />
+                    ))}
+                </Slider> */}
+                <Slider {...settings}>
+                    {productlists.map((product) => (
+                        <ProductCard
+                            id={product.id}
+                            key={product.id}
+                            title={product.title}
+                            description={product.description}
+                            images={product.images}
+                            price={product.price}
+                            discount={product.discount}
+                            rating={product.rating}
+                            featured={product.featured}
+                            category={product.category}
+                            color={product.color}
                         />
                     ))}
                 </Slider>
@@ -93,10 +113,10 @@ export const HeroItem = ({key, title, description, prices, colors, image}) => {
         <>
             <section className="content flex justify-between lg:px-16 mt-10 lg:mt-0 h-[50vh] lg:h-[95vh] relative z-1">
                 <div className="left w-1/2 p-8 lg:p-32">
-                    <Title level={1} className="leading-none font-medium md:text-3xl lg:text-[70px] lg:leading-snug mb-4">
+                    {/* <Title level={1} className="leading-none font-medium md:text-3xl lg:text-[70px] lg:leading-snug mb-4">
                         {title}
-                    </Title>
-                    <BodyOne className="">{description}</BodyOne>
+                    </Title> */}
+                    {/* <BodyOne className="">{description}</BodyOne> */}
                     <div className="flex items-start gap-8 my-5">
                         <div>
                             <Caption>Prices</Caption>

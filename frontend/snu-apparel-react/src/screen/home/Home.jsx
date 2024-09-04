@@ -1,12 +1,13 @@
 import { Title } from "../../components/common/CustomComponents.jsx"
 import { Hero } from "../../components/hero/Hero.jsx"
 import { ProductSlideCard } from "../../components/product/ProductSlide.jsx"
-import { Banner, ShippingInfo, ProductSlide } from "../../router/index.js"
+import { Banner, ShippingInfo, ProductSlide, TopBanner } from "../../router/index.js"
 import { Caption } from "../../components/common/CustomComponents";
 
 export const Home = () => {
     return (
         <>
+            <TopBanner/>
             <Hero />
             {/* <Product/> */}
             <ShippingInfo />

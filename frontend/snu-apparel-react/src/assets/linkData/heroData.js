@@ -3,7 +3,7 @@ export const herolist = [
       id: 1,
       title: "Incoming Drip",
       description:
-        "Get fitted kid.",
+        "Just buy it.",
       image: "../images/hero/h1.png",
       price: [
         {

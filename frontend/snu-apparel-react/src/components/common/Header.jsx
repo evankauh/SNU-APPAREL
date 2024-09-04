@@ -36,11 +36,11 @@ export const Header = () => {
 
     return (
         <>
-            <header className="header px-2 py-3 lg:py-0 bg-white relative z-20">
+            <header className="header px-2 py-3 lg:py-0 bg-primary relative z-20">
                 <nav className="p-4 flex justify-between items-center relative">
                     {/* LOGO */}
                     <div className="relative flex items-center w-full justify-center">
-                        <div className="h-7 py-0 absolute left-0">
+                        <div className="h-7 py-0 absolute left-0 text-white">
                             UCSD Sigma Nu
                         </div>
                         
@@ -56,9 +56,9 @@ export const Header = () => {
                         {/* CART / SEARCH / LOGIN ICONS */}
                         <div className="absolute right-0 flex items-center gap-8 icons">
                             <div className="hidden lg:block text-inherit relative z-20">
-                                <CustomLink className="" href="">Login </CustomLink>
-                                <span>/</span>
-                                <CustomLink className="" href="">Sign Up</CustomLink>
+                                <CustomLink className="text-white" href="">Login </CustomLink>
+                                <span className="text-white">/</span>
+                                <CustomLink className="text-white" href="">Sign Up</CustomLink>
                             </div>
                             <div className="icon flex items-center justify-center gap-6">
                                 <FiSearch size={18} />

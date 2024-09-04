@@ -1,7 +1,7 @@
 import "./styles/index.css"
 import { Header } from './components/common/Header'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Layout, ProductDeatils, Shop } from './router';
+import { CartPage, Home, Layout, ProductDeatils, Shop } from './router';
 
 function App() {
 
@@ -30,6 +30,14 @@ function App() {
         element={
           <Layout>
             <ProductDeatils/>
+          </Layout>
+        }
+      />
+      <Route
+        path="/cart"
+        element={
+          <Layout>
+            <CartPage/>
           </Layout>
         }
       />

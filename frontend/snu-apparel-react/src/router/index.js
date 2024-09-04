@@ -9,3 +9,5 @@ export { ShippingInfo } from "../components/product/ShippingInfo";
 export { Banner } from "../components/product/Banner";
 export { ProductSlide } from "../components/product/ProductSlide";
 export { ProductDeatils } from "../screen/product/ProductDetails";
+export { CartPage } from "../screen/CartPage";
+export { TopBanner } from "../components/product/TopBanner"

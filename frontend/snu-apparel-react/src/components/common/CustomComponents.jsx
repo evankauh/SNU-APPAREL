@@ -7,7 +7,7 @@ const Title = ({ level, children, className }) => {
     const Heading = `h${level}`;
     const classes = `font-medium ${
         level === 1
-        ? "text-[80px] font-[600] text-primary"
+        ? "text-[80px] font-[600] text-white"
         : level === 2
         ? "text-[40px] font-[700] text-primary"
         : level === 3
@@ -50,7 +50,7 @@ const Span = ({ children }) => {
 };
 
 const CustomNavLink = ({ href, className, children }) => {
-    const linkStyles = "text-[15px] font-medium text-black cursor-pointer list-none";
+    const linkStyles = "text-[15px] font-medium text-white cursor-pointer list-none";
 
     return (
         <NavLink
