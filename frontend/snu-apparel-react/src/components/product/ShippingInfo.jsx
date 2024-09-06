@@ -15,7 +15,7 @@ const additionalInfo = [
     {
       id: 2,
       title: "24/7 SUPPORT",
-      description: "We're Available 24/7 To Help With Any Questions/Concerns. You just have to find us.",
+      description: "We're Available 24/7 To Help With Any Questions/Concerns. You just have to find us!",
       icon: <MdOutlineMarkUnreadChatAlt size={50} />,
     },
     {
@@ -30,7 +30,7 @@ const additionalInfo = [
 
   export const ShippingInfo = () => {
     return (
-      <section className="container">
+      <section className="container bg-black">
         <div className="py-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {additionalInfo.map((info) => (
             <div 
@@ -38,8 +38,8 @@ const additionalInfo = [
               className="flex items-center justify-center flex-col text-center gap-3"
             >
               <div className="text-primary-green">{info.icon}</div>
-              <h3 className="text-xl font-bold mt-4">{info.title}</h3>
-              <p className="mt-2">{info.description}</p>
+              <h3 className="text-xl font-bold mt-4 text-white">{info.title}</h3>
+              <p className="mt-2 text-white">{info.description}</p>
             </div>
           ))}
         </div>
@@ -50,7 +50,7 @@ const additionalInfo = [
             <Title className="text-white leading-none" level={3}>
               SUBSCRIBE TO OUR NEWSLETTER
             </Title>
-            <BodyOne className="text-gray-300">
+            <BodyOne className="text-white-100">
               Get Latest News, Offers And Discounts.
             </BodyOne>
           </div>

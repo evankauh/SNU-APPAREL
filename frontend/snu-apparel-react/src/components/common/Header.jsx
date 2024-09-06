@@ -47,7 +47,7 @@ export const Header = () => {
                         {/* MENULINKS */}
                         <div className="hidden lg:flex items-center justify-center gap-8">
                             {menulists.map((list) => (
-                                <li key={list.id} className="uppercase list-none text-white">
+                                <li key={list.id} className="uppercase list-none">
                                     <CustomNavLink href={list.path} className="">{list.link}</CustomNavLink>
                                 </li>
                             ))}

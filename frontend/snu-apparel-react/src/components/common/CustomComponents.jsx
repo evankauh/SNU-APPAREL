@@ -9,9 +9,9 @@ const Title = ({ level, children, className }) => {
         level === 1
         ? "text-[80px] font-[600] text-white"
         : level === 2
-        ? "text-[40px] font-[700] text-primary"
+        ? "text-[40px] font-[700] text-white"
         : level === 3
-        ? "text-[28px] font-[700] text-primary"
+        ? "text-[28px] font-[700] text-white"
         : level === 4
         ? "text-[24px] font-[600] text-primary"
         : level === 5
@@ -38,7 +38,7 @@ const BodyTwo = ({ children }) => {
 };
 
 const Caption = ({ children }) => {
-    return <p className="text-sm font-normal text-primary-gray">{children}</p>;
+    return <p className="text-lg font-normal text-white-100">{children}</p>;
 };
 
 const FooterCaption = ({ children }) => {
@@ -50,7 +50,7 @@ const Span = ({ children }) => {
 };
 
 const CustomNavLink = ({ href, className, children }) => {
-    const linkStyles = "text-[15px] font-medium text-white cursor-pointer list-none";
+    const linkStyles = "text-[15px] font-medium cursor-pointer list-none";
 
     return (
         <NavLink
@@ -58,7 +58,7 @@ const CustomNavLink = ({ href, className, children }) => {
             className={({ isActive }) =>
                 isActive
                     ? `${className} ${linkStyles} text-gold`
-                    : `${className} ${linkStyles}`
+                    : `${className} ${linkStyles} text-white`
             }
         >
             {children}

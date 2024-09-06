@@ -44,7 +44,7 @@ export const Hero = () => {
     return (
         <>
             {/* used to be z-20 */}
-            <section className="h-[50vh] lg:h-[95vh] bg-primary lg:mt-14 relative z-1 featureproduct"> 
+            <section className="h-[50vh] lg:h-[95vh] bg-black lg:mt-14 relative z-1 featureproduct"> 
             {/* HEROITEM AND HEROLISTS NOT BEING USED... */}
                 {/* <Slider {...settings}>
                     {herolist.map((item) => (
@@ -144,7 +144,7 @@ export const HeroItem = ({key, title, description, prices, colors, image}) => {
                     </div>
                 </div>
 
-                <div className="right bg-white p-5 w-1/2 h-full flex justify-center items-center relative z-50">
+                <div className="right bg-black p-5 w-1/2 h-full flex justify-center items-center relative z-50">
                     ADD T SHIRT OR BOYS IMAGE HERE
                     {/* <img src={image} alt="" className="h-[60vh] w-full object-contain"/> */}
                 </div>

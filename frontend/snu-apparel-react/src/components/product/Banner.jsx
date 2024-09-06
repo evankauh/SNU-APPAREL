@@ -4,11 +4,11 @@ import { BodyOne, Title } from "../common/CustomComponents";
 export const Banner = () => {
   return (
     <>
-    <section className="flex flex-col lg:flex-row items-center justify-between pt-20">
+    <section className="flex flex-col lg:flex-row items-center justify-between pt-20 bg-black">
       {promotionalInfo.map((info) => (
         <>
         <div className="box relative w-full" key={info.id}>
-            <div className="w-full h-[50vh]">
+            <div className="w-full h-[50vh] bg-white">
                 <img
                 src={info.image}
                 className="w-full h-full object-cover"

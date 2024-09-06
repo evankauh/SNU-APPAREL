@@ -6,7 +6,13 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: black;
 }
+
+main {
+  background-color: black;
+}
+
 @layer components {
   .container {
     @apply w-full px-8 lg:p-0 lg:w-3/4 m-auto;

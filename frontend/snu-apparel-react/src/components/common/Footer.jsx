@@ -3,7 +3,7 @@ import { Title, BodyOne, CustomLink, FooterCaption } from "./CustomComponents"
 export const Footer = () => {
     return (
         <>
-            <footer className="py-14 bg-black">
+            <footer className="pt-14 pb-40 bg-black">
                 <div className="container grid-cols-1 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                         {/* <img src={LogoSource} alt="LogoImg" className="h-7"/> */}
@@ -14,10 +14,10 @@ export const Footer = () => {
                             <FooterCaption>Call: (123) 456-7890</FooterCaption>
                         </div>
                         <br/>
-                        <BodyOne>Subscribe to our Newsletter</BodyOne>
+                        <BodyOne className="text-white-100">Subscribe to our Newsletter</BodyOne>
                         <input 
                             type="text" 
-                            className="p-3 w-full border bg-white-100 border-gray-300 rounded-md outline-none"
+                            className="p-3 w-full border bg-black-100 border-gray-300 rounded-md outline-none"
                             placeholder="Enter Email Address"
                         />
                     </div>

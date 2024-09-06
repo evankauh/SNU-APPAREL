@@ -97,7 +97,7 @@ export const CartPageCard = ({id, cover, name, price, quantity, totalPrice}) => 
 
     return (
         <>
-            <tr className="bg-white border-b hover:bg-gray-50 w-full">
+            <tr className="bg-black border-b hover:bg-gray-50 w-full">
                 <td className="p-4">
                     {cover?.slice(0, 1).map((image, i) => (
                     <img

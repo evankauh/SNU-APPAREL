@@ -9,11 +9,11 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 export const ProductSlide = () => {
     return (
-      <section className="py-20 bg-white slideproduct">
+      <section className="py-20 bg-black slideproduct">
         <div className="container">
           <Title level={4}>What is trending now</Title>
           <div className="flex items-center gap-3 uppercase">
-            <BodyOne className="text-sm">
+            <BodyOne className="text-sm text-white">
               DISCOVER THE MOST TRENDING PRODUCTS NOW.
             </BodyOne>
           </div>

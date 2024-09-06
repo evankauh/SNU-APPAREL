@@ -41,7 +41,7 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
     }
     return (
         <>
-        <div className="product card">
+        <div className="product card bg-black">
             <div className="images h-96">
                 {images.map((cover, index) => (
                     <img key={index} src={cover?.image} alt={id} className="w-full h-full object-cover"/>
@@ -66,9 +66,9 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
                     </button>
                 </div>
             </div>
-            <div className="details flex items-center flex-col bg-white pt-6">
+            <div className="details flex items-center flex-col bg-black pt-6">
                 <NavLink to={`/product-details/${id}`}>
-                    <BodyOne>{title}</BodyOne>
+                    <BodyOne className="text-white">{title}</BodyOne>
                 </NavLink>
                 <div className="flex items-center gap-2 mb-2">{RenderRatingStars(rating)}</div>
                 <div className="flex items-center gap-3">
@@ -77,7 +77,7 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
                             <BodyOne className="line-through" key={index}>
                                 ${priceItem.value}
                             </BodyOne>
-                            <BodyOne className="text-primary-green">
+                            <BodyOne className="text-white">
                                 ${(priceItem.value - (priceItem.value * discount) / 100 ).toFixed(2)}
                             </BodyOne>
                         </>

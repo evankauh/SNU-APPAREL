@@ -14,8 +14,8 @@ export const Home = () => {
             <Banner />
             {/* <ProductSlide /> */}
 
-            <div className="container my-16 slideproduct">
-                <Title level={3}>Recent Product</Title>
+            <div className="container my-16 slideproduct bg-black">
+                <Title level={3}>Recent Products</Title>
                 <Caption>
                     DISCOVER THE MOST TRENDING PRODUCTS NOW.
                 </Caption>
