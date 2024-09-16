@@ -58,7 +58,7 @@ export const Header = () => {
                             <div className="hidden lg:block text-inherit relative z-20">
                                 <CustomLink className="text-white" href="">Login </CustomLink>
                                 <span className="text-white">/</span>
-                                <CustomLink className="text-white" href="">Sign Up</CustomLink>
+                                <CustomLink className="text-white" href="/register">Sign Up</CustomLink>
                             </div>
                             <div className="icon flex items-center justify-center gap-6">
                                 <FiSearch size={18} />

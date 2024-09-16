@@ -5,6 +5,7 @@ import { Banner, ShippingInfo, ProductSlide, TopBanner } from "../../router/inde
 import { Caption } from "../../components/common/CustomComponents";
 
 export const Home = () => {
+
     return (
         <>
             <TopBanner/>

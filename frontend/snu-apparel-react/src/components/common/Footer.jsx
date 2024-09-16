@@ -3,7 +3,7 @@ import { Title, BodyOne, CustomLink, FooterCaption } from "./CustomComponents"
 export const Footer = () => {
     return (
         <>
-            <footer className="pt-14 pb-40 bg-black">
+            <footer className="pt-20 pb-20 bg-black">
                 <div className="container grid-cols-1 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                         {/* <img src={LogoSource} alt="LogoImg" className="h-7"/> */}

@@ -25,9 +25,6 @@ const Title = ({ level, children, className }) => {
     return <Heading className={`${className} ${classes}`}>{children}</Heading>;
 };
 
-
-
-
 const BodyOne = ({ children, className }) => {
     const classes = "text-lg font-normal text-primary-gray";
     return <p className={`${className} ${classes}`}>{children}</p>;
@@ -39,6 +36,10 @@ const BodyTwo = ({ children }) => {
 
 const Caption = ({ children }) => {
     return <p className="text-lg font-normal text-white-100">{children}</p>;
+};
+
+const SmallCaption = ({ children, className }) => {
+    return <div className={`px-3 text-sm text-center font-normal text-white-100 ${className}`}>{children}</div>;
 };
 
 const FooterCaption = ({ children }) => {
@@ -83,9 +84,9 @@ const CustomMobileNavLink = ({ href, className, children }) => {
     );
 };
 
-const CustomLink = ({ className, children }) => {
+const CustomLink = ({href, className, children }) => {
     const linkStyles = "text-[15px] font-medium cursor-pointer list-none";
-    return (<NavLink className={`${className} ${linkStyles}`}> {children}</NavLink>);
+    return (<NavLink to={href} className={`${className} ${linkStyles}`}> {children}</NavLink>);
 };
 
 const Badges = ({ color, children }) => {
@@ -96,7 +97,31 @@ const Badges = ({ color, children }) => {
     );
 };
 
-export { Title, BodyOne, BodyTwo, Caption, Span, CustomNavLink, CustomLink, Badges, FooterCaption, CustomMobileNavLink };
+const TextBox = ({children}) => {
+    return <input type='text' className='w-[100%] py-2 px-5 border border-white-100 bg-black text-white text-sm' placeholder={children}></input>
+}
+
+const Checkbox = ({children}) => {
+    return <input type='checkbox' className='w-[30px] py-2 px-5 border border-white-100 bg-black text-white text-sm' value={children}></input>
+}
+
+const Dropdown = ({classname, children, list}) => {
+
+    return <select className='w-[100%] py-2 px-5 border border-white-100 bg-black text-white text-sm select-none'>
+        <option disabled selected hidden className='text-black'>{children}</option>
+        {list.map((item) => (
+            <option>{item}</option>
+        ))}
+    </select>
+}
+
+const RegisterButton = ({className, children, color}) => {
+    const type = color == 'black' ? 'w-[100%] py-2 px-5 border border-white-100 bg-black text-white text-sm' : 'w-[100%] py-2 px-5 border border-black bg-white text-black text-sm'
+
+    return <button className={`${type} ${className}`}>{children}</button>
+}
+
+export { Title, BodyOne, BodyTwo, SmallCaption, Caption, Span, CustomNavLink, CustomLink, Badges, FooterCaption, CustomMobileNavLink, RegisterButton, TextBox, Dropdown, Checkbox };
 
 CustomNavLink.propTypes = {
     href: PropTypes.string.isRequired,
@@ -141,10 +166,30 @@ Caption.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+SmallCaption.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 FooterCaption.propTypes = {
     children: PropTypes.node.isRequired,
-  };
+};
 
 Span.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+TextBox.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+Checkbox.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+Dropdown.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+RegisterButton.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
