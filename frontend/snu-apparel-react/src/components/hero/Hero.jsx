@@ -44,7 +44,7 @@ export const Hero = () => {
     return (
         <>
             {/* used to be z-20 */}
-            <section className="h-[50vh] lg:h-[95vh] bg-black lg:mt-14 relative z-1 featureproduct"> 
+            <section className="h-[50vh] lg:h-[95vh] px-10 bg-black lg:mt-14 relative z-1 featureproduct"> 
             {/* HEROITEM AND HEROLISTS NOT BEING USED... */}
                 {/* <Slider {...settings}>
                     {herolist.map((item) => (
@@ -57,7 +57,8 @@ export const Hero = () => {
                             image={item.image}
                         />
                     ))}
-                </Slider> */}
+                </Slider> */} 
+                <Title level={5} className="text-white absolute top-5 left-10">Best of Graphic Tees</Title>
                 <Slider {...settings}>
                     {productlists.map((product) => (
                         <ProductCard
@@ -78,7 +79,7 @@ export const Hero = () => {
             </section>
 
             <section className="h-[50vh] lg:h-[90vh] bg-black relative z-1">
-                <Title level={2} className="p-10 text-white uppercase">The Essentials</Title>
+                <Title level={5} className="px-10 py-5 text-white">The Essentials</Title>
 
                 <div className="flex flex-row justify-between px-10">
                     <div className="flex flex-col items-center gap-10">

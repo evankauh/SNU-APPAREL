@@ -1,4 +1,4 @@
-export const Login = () => {
+export const About = () => {
     return (
         <div>hello</div>
     )

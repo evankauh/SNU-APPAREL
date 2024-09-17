@@ -1,30 +1,20 @@
 import { promotionalInfo } from "../../assets/linkData/promotionalInfo";
-import { BodyOne, Title } from "../common/CustomComponents";
+import { BodyOne, Title, RoundedButton } from "../common/CustomComponents";
 
-export const Banner = () => {
+export const Banner = ({ title, subtitle, description, image, href, btnTitle }) => {
   return (
     <>
-    <section className="flex flex-col lg:flex-row items-center justify-between pt-20 bg-black">
-      {promotionalInfo.map((info) => (
-        <>
-        <div className="box relative w-full" key={info.id}>
-            <div className="w-full h-[50vh] bg-white">
-                <img
-                src={info.image}
-                className="w-full h-full object-cover"
-                alt=""
-                />
-            </div>
-            <div className="absolute top-0 left-0 p-3 md:p-8 lg:w-2/3">
-                <span className="bg-white px-6 py-2 text-sm">{info.title}</span>
-                <Title level={2} className="my-5">{info.title}</Title>
-                <BodyOne>{info.description}</BodyOne>
-                <button className="secondary-btn">Shop Now</button>
-            </div>
+    <section className="flex flex-col items-center justify-between pt-20 bg-none">
+      <div className="w-full px-10">
+        <Title level={5} className="text-white py-5">{title}</Title>
+        <div className="h-[40rem] w-[full]  overflow-hidden position-relative">
+          <img src={image} alt={image} className="w-[100%] object-position-center"></img>
         </div>
-        </>
-      ))}
+      </div>
+      <Title level={2} className="uppercase pt-10 text-center px-10">{subtitle}</Title>
+      <div className="w-[25rem] text-[13px] text-white p-4 text-center">{description}</div>
+      <RoundedButton classname="m-3">{btnTitle}</RoundedButton>
     </section>
     </>
   );
-};
+};  

@@ -12,3 +12,5 @@ export { ProductDeatils } from "../screen/product/ProductDetails";
 export { CartPage } from "../screen/CartPage";
 export { TopBanner } from "../components/product/TopBanner"
 export { Register } from "../components/account/Register"
+export { Login } from "../components/account/Login"
+export { About } from "../components/pages/About"

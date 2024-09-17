@@ -15,7 +15,7 @@ const Title = ({ level, children, className }) => {
         : level === 4
         ? "text-[24px] font-[600] text-primary"
         : level === 5
-        ? "text-[22px] font-[600] text-primary"
+        ? "text-[22px] font-[600] text-white"
         : level === 6
         ? "text-[22px] font-[600] text-white"
         : level === 7
@@ -121,7 +121,12 @@ const RegisterButton = ({className, children, color}) => {
     return <button className={`${type} ${className}`}>{children}</button>
 }
 
-export { Title, BodyOne, BodyTwo, SmallCaption, Caption, Span, CustomNavLink, CustomLink, Badges, FooterCaption, CustomMobileNavLink, RegisterButton, TextBox, Dropdown, Checkbox };
+const RoundedButton = ({classname, children, color, link}) => {
+    const type = color == 'black' ? 'bg-black text-white' : 'bg-white text-black'
+    return <button className={`${type} hover:bg-light-gray text-white text-sm py-1 px-5 rounded-full border border-white ${classname}`}>{children}</button>
+}
+
+export { Title, BodyOne, BodyTwo, SmallCaption, Caption, Span, CustomNavLink, CustomLink, Badges, FooterCaption, CustomMobileNavLink, RegisterButton, TextBox, Dropdown, Checkbox, RoundedButton };
 
 CustomNavLink.propTypes = {
     href: PropTypes.string.isRequired,
@@ -192,4 +197,8 @@ Dropdown.propTypes = {
 
 RegisterButton.propTypes = {
     children: PropTypes.node.isRequired,
-  };
+};
+
+RoundedButton.propTypes = {
+    children: PropTypes.node.isRequired,
+};

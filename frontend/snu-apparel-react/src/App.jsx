@@ -1,7 +1,7 @@
 import "./styles/index.css"
 import { Header } from './components/common/Header'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { CartPage, Home, Layout, ProductDeatils, Shop, Register } from './router';
+import { CartPage, Home, Layout, ProductDeatils, Shop, Register, Login, About } from './router';
 
 function App() {
 
@@ -46,6 +46,22 @@ function App() {
         element={
           <Layout>
             <Register/>
+          </Layout>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <Layout>
+            <Login/>
+          </Layout>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <Layout>
+            <About/>
           </Layout>
         }
       />

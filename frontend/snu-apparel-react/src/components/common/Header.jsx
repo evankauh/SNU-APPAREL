@@ -56,7 +56,7 @@ export const Header = () => {
                         {/* CART / SEARCH / LOGIN ICONS */}
                         <div className="absolute right-0 flex items-center gap-8 icons">
                             <div className="hidden lg:block text-inherit relative z-20">
-                                <CustomLink className="text-white" href="">Login </CustomLink>
+                                <CustomLink className="text-white" href="/login">Login </CustomLink>
                                 <span className="text-white">/</span>
                                 <CustomLink className="text-white" href="/register">Sign Up</CustomLink>
                             </div>

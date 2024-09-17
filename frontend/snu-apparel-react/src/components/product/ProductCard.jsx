@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoCart, IoClose } from "react-icons/io5"
+import { IoCart, IoClose } from "react-icons/io5";
 import { IoMdHeart } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { BodyOne, Title } from "../common/CustomComponents";
@@ -41,8 +41,8 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
     }
     return (
         <>
-        <div className="product card bg-black">
-            <div className="images h-96">
+        <div className="product card bg-none flex flex-col items-center">
+            <div className="images h-[28rem] w-[28rem]">
                 {images.map((cover, index) => (
                     <img key={index} src={cover?.image} alt={id} className="w-full h-full object-cover"/>
                 ))}
@@ -66,7 +66,7 @@ export const ProductCard = ({id, key, title, description, images, price, discoun
                     </button>
                 </div>
             </div>
-            <div className="details flex items-center flex-col bg-black pt-6">
+            <div className="details flex items-center flex-col bg-black pt-3">
                 <NavLink to={`/product-details/${id}`}>
                     <BodyOne className="text-white">{title}</BodyOne>
                 </NavLink>
